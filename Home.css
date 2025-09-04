@@ -1,0 +1,96 @@
+:root {
+  --sky: #a9dcee;       /* ฟ้าอ่อน */
+  --sky-dark: #89cfe4;  /* ฟ้าหัวข้อ */
+  --ink: #2b2b2b;
+  --maxw: 1200px;
+  --gap: 20px;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "TH Sarabun New", "Noto Sans Thai", sans-serif;
+  background: var(--sky);
+  color: var(--ink);
+}
+
+/* ---------- Header ---------- */
+header {
+  background: var(--sky-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 15px;
+  max-width: var(--maxw);
+  margin: auto;
+}
+
+.nav a {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  text-decoration: none;
+  font-size: clamp(18px, 2.5vw, 28px);
+  color: #111;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  transform: translateY(-2px);
+  color: #000;
+}
+
+/* ---------- Gallery ---------- */
+main {
+  max-width: var(--maxw);
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+  gap: var(--gap);
+}
+
+.item {
+  background: #fff;              /* ขอบพื้นหลังขาว */
+  padding: 10px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 24px;
+  padding: 30px 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr; /* มือถือแถวเดียว */
+  }
+}

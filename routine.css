@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background-color: #b9f0f7; /* ฟ้าอ่อน */
+  color: #000;
+  line-height: 1.8;
+}
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 16px;       /* เล็กลง */
+  padding: 15px 0;       /* เล็กลง */
+}

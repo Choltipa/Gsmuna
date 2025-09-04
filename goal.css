@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background-color: #b9f0f7; /* ฟ้าอ่อน */
+  color: #000;
+  line-height: 1.6;
+  font-size: 15px;   /* ลดขนาดพื้นฐาน */
+}
+
+/* ส่วนหัว */
+header {
+  background-color: #6ec6e2; /* ฟ้าเข้ม */
+  text-align: center;
+  padding: 15px;  /* ลด padding ให้พอดี */
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(20px, 3.5vw, 32px); /* ลดขนาด */
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+header h1 span {
+  font-weight: normal;
+  font-size: clamp(14px, 2.5vw, 22px);
+  margin-left: 6px;
+}
+
+/* เนื้อหา */
+.content {
+  padding: 20px;
+  max-width: 800px;  /* ลดให้แคบลงนิด */
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+section h2 {
+  font-size: clamp(16px, 2vw, 20px); /* ลดขนาดหัวข้อ */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: circle;
+  padding-left: 18px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  font-size: clamp(14px, 1.8vw, 18px); /* ตัวเล็กลง */
+}
+
+/* ฟุตเตอร์ */
+footer {
+  text-align: right;
+  padding: 15px;
+}
+
+footer a {
+  font-style: italic;
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive - จอเล็กให้ Home อยู่ตรงกลาง */
+@media (max-width: 600px) {
+  footer {
+    text-align: center;
+  }
+}
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 16px;       /* เล็กลง */
+  padding: 15px 0;       /* เล็กลง */
+}

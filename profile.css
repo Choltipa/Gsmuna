@@ -1,0 +1,140 @@
+:root {
+  --sky: #a9dcee;      /* ฟ้าอ่อน */
+  --sky-dark: #89cfe4; /* ฟ้าเข้ม */
+  --ink: #2b2b2b;
+  --maxw: 700px;
+  --gap: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "TH Sarabun New", "Noto Sans Thai", sans-serif;
+  background: var(--sky);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: var(--sky-dark);
+  text-align: center;
+  padding: 25px 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* ---------- Profile Section ---------- */
+main.profile {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--gap);
+  max-width: var(--maxw);
+  margin: 40px auto;
+  padding: 0 20px;
+  align-items: start;
+}
+
+.profile-img img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.profile-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.profile-info h2 {
+  margin: 0 0 15px;
+  font-size: 24px;
+}
+
+/* ข้อมูลแต่ละบรรทัดพร้อมไอคอน */
+.profile-info p {
+  margin: 8px 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info p img.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-info p img.icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: right;
+  padding: 20px;
+}
+
+footer a {
+  font-style: italic;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  main.profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .profile-img img {
+    max-width: 180px;
+  }
+
+  .profile-info p img.icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-img img {
+    max-width: 140px;
+  }
+
+  .profile-info p img.icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 16px;       /* เล็กลง */
+  padding: 15px 0;       /* เล็กลง */
+}
