@@ -2,7 +2,7 @@
   --sky: #a9dcee;       /* ฟ้าอ่อน */
   --sky-dark: #89cfe4;  /* ฟ้าหัวข้อ */
   --ink: #2b2b2b;
-  --maxw: 1200px;
+  --maxw: 1000px;
   --gap: 20px;
   --radius: 12px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -52,45 +52,42 @@ header {
   color: #000;
 }
 
-/* ---------- Gallery ---------- */
-main {
-  max-width: var(--maxw);
-  margin: 30px auto;
-  padding: 0 15px;
+/* ---------- Main Image ---------- */
+.main-content {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
-  gap: var(--gap);
-}
-
-.item {
-  background: #fff;              /* ขอบพื้นหลังขาว */
-  padding: 10px;
+.profile-img {
+  max-width: 100px;
+  width: 100%;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-}
-
-.item img {
-  width: 100%;
-  display: block;
-  border-radius: var(--radius);
-  object-fit: cover;
+  border: 3px solid #fff;
 }
 
 /* ---------- Footer ---------- */
 footer {
   text-align: center;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 24px;
   padding: 30px 0;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr; /* มือถือแถวเดียว */
-  }
+.home-link {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 24px;
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.home-link:hover {
+  color: #000;
+  background: #f0f0f0;
+  transform: translateY(-2px);
 }
