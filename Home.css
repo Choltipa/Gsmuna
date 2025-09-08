@@ -57,14 +57,18 @@ header {
   display: flex;
   justify-content: center;
   margin: 40px auto;
+  max-width: var(--maxw);
+  padding: 0 20px;
 }
 
 .profile-img {
-  max-width: 100px;
   width: 100%;
+  max-width: 100px;   /* รูปจะไม่ใหญ่เกิน 300px */
+  height: cover;       /* รักษาอัตราส่วน */
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 3px solid #fff;
+  object-fit: cover;  /* ทำให้รูปเต็มกรอบและไม่บิดเบี้ยว */
 }
 
 /* ---------- Footer ---------- */
