@@ -1,27 +1,19 @@
-:root {
-  --sky: #a9dcee;       /* ฟ้าอ่อน */
-  --sky-dark: #89cfe4;  /* ฟ้าหัวข้อ */
-  --ink: #2b2b2b;
-  --maxw: 1000px;
-  --gap: 20px;
-  --radius: 12px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, "TH Sarabun New", "Noto Sans Thai", sans-serif;
-  background: var(--sky);
-  color: var(--ink);
+  font-family: "Georgia", serif;
+  background-color: #b5e9f5;
+  color: #000;
 }
 
 /* ---------- Header ---------- */
 header {
-  background: var(--sky-dark);
+  background: #8dd7ec;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -34,8 +26,6 @@ header {
   flex-wrap: wrap;
   gap: 40px;
   padding: 15px;
-  max-width: var(--maxw);
-  margin: auto;
 }
 
 .nav a {
@@ -52,46 +42,101 @@ header {
   color: #000;
 }
 
-/* ---------- Main Image ---------- */
-.main-content {
+/* Layout */
+.container {
   display: flex;
-  justify-content: center;
-  margin: 40px auto;
-  max-width: var(--maxw);
-  padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
 }
 
-.profile-img {
-  width: 100%;
-  max-width: 100px;   /* รูปจะไม่ใหญ่เกิน 300px */
-  height: cover;       /* รักษาอัตราส่วน */
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 3px solid #fff;
-  object-fit: cover;  /* ทำให้รูปเต็มกรอบและไม่บิดเบี้ยว */
+/* 4 รูปด้านบน */
+.top-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* กันรูปเบียดบนจอเล็ก */
+}
+
+.top-images img {
+  width: 150px;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* 2 รูปล่าง (เว้นห่างจากบน) */
+.bottom-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px; /* เว้นระยะจากรูปบน */
+  flex-wrap: wrap;
+}
+
+.bottom-images img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.home {
+  font-size: 22px;
+  font-style: italic;
+  text-align: center;
 }
 
 /* ---------- Footer ---------- */
 footer {
-  text-align: center;
-  padding: 30px 0;
+  text-align: right;
+  padding: 20px;
 }
 
-.home-link {
-  font-family: "Playfair Display", serif;
+footer a {
   font-style: italic;
-  font-size: 24px;
+  font-size: 18px;
+  color: black;
   text-decoration: none;
-  color: #111;
-  background: #fff;
-  padding: 8px 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: 0.2s;
 }
 
-.home-link:hover {
-  color: #000;
-  background: #f0f0f0;
-  transform: translateY(-2px);
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .bottom-images img {
+    width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .top-images img {
+    width: 45%;
+  }
+
+  .bottom-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .bottom-images img {
+    width: 90%;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .home {
+    font-size: 20px;
+  }
 }
